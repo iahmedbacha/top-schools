@@ -50,7 +50,7 @@ class CommentaireController extends Controller {
         $this->loadModel('Commentaire');
         $this->Commentaire->delete(array(
                 'conditions' => array(
-                    'id' => $params
+                    'id' => "'".$_POST['id']."'"
             )
         ));
         header('Location: ' . $_SERVER['HTTP_REFERER']);

@@ -22,7 +22,7 @@ class ReponseController extends Controller {
         $this->loadModel('Reponse');
         $this->Reponse->delete(array(
                 'conditions' => array(
-                    'id' => $params
+                    'id' => "'".$_POST['id']."'"
             )
         ));
         header('Location: ' . $_SERVER['HTTP_REFERER']);

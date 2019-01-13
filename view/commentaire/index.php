@@ -45,7 +45,8 @@
                 						echo "<p>".$commentaire->contenu."</p>";
                                         if (isset($user)) {
                                             if ($user->grade=='admin') {
-                                                echo  '<form class="delete-area" action="'.BASE_URL.'/commentaire/destroy/'.$commentaire->id.'" method="post">';
+                                                echo  '<form class="delete-area" action="'.BASE_URL.'/commentaire/destroy" method="post">';
+                                                    echo '<input type="text" name="id" value="'.$commentaire->id.'" hidden>';
                                                     echo '<button class="btn">';
                                                         echo '<span><i class="far fa-trash-alt"></i></span>';
                                                         echo '<span> SUPPRIMER</span>';
@@ -70,7 +71,8 @@
                                                             echo '<p>'.$reponse->contenu.'</p>';
                                                             if (isset($user)) {
                                                                 if ($user->grade=='admin') {
-                                                                    echo '<form class="delete-area">';
+                                                                    echo '<form class="delete-area" action="'.BASE_URL.'/reponse/destroy" method="post">';
+                                                                        echo '<input type="text" name="id" value="'.$reponse->id.'" hidden>';
                                                                         echo '<button class="btn">';
                                                                             echo '<span><i class="far fa-trash-alt"></i></span>';
                                                                             echo '<span> SUPPRIMER</span>';
@@ -90,10 +92,12 @@
                                         echo '<form class="add-sub-comment-container" action="'.BASE_URL.'/reponse/create" method="post">';
                                             echo '<textarea class="form-control" name="contenu"></textarea>';
                                             echo '<div class="add-comment">';
-                                                echo '<a class="btn btn-primary" href="#" role="button" style=>';
+                                                echo '<input type="text" name="id_user" value="'.$user->id.'" hidden>';
+                                                echo '<input type="text" name="id_commentaire" value="'.$commentaire->id.'" hidden>';
+                                                echo '<button class="btn btn-primary" role="button" style=>';
                                                     echo '<i data-feather="message-square"></i>';
                                                     echo '<span>Entrer</span>';
-                                                echo '</a>';
+                                                echo '</button>';
                                             echo '</div>';
                                         echo '</form>';
                                     }
