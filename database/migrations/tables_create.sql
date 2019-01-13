@@ -37,8 +37,30 @@ CREATE TABLE Formation (
     CONSTRAINT FOREIGN KEY (id_type) REFERENCES TypeFormation(id) ON DELETE CASCADE
 );
 
-CREATE TABLE Utilisateur (
+CREATE TABLE Commentaire (
     id int NOT NULL UNIQUE AUTO_INCREMENT,
+    contenu varchar(255) NOT NULL,
+    id_user int NOT NULL,
+    id_ecole int NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT FOREIGN KEY (id_user) REFERENCES User(id) ON DELETE CASCADE,
+    CONSTRAINT FOREIGN KEY (id_ecole) REFERENCES Ecole(id) ON DELETE CASCADE    
+);
+
+CREATE TABLE Reponse (
+    id int NOT NULL UNIQUE AUTO_INCREMENT,
+    contenu varchar(255) NOT NULL,
+    id_user int NOT NULL,
+    id_commentaire int,
+    PRIMARY KEY (id),
+    CONSTRAINT FOREIGN KEY (id_user) REFERENCES User(id) ON DELETE CASCADE,
+    CONSTRAINT FOREIGN KEY (id_commentaire) REFERENCES Commentaire(id) ON DELETE CASCADE
+);
+
+CREATE TABLE User (
+    id int NOT NULL UNIQUE AUTO_INCREMENT,
+    nom varchar(255) NOT NULL,
+    prenom varchar(255) NOT NULL,
     username varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     grade varchar(255) NOT NULL,

@@ -61,9 +61,19 @@ INSERT INTO Formation (id,designation,vol_hor,prix_ht,taxe,id_type) VALUES
 	(11,"Outils",10,1500,17,5),
 	(12,"Qualité logiciel",10,1500,17,5);
 
-INSERT INTO Utilisateur (id,username,password,grade,id_ecole) VALUES 
-	(1,"admin","admin","admin",NULL),
-	(2,"employe1","employe1","employe",1),
-	(3,"employe2","employe2","employe",2),
-	(4,"employe3","employe3","employe",3),
-	(5,"membre","membre","membre",NULL);
+INSERT INTO Commentaire (id,contenu,id_user,id_ecole) VALUES 
+	(1,"Ecole formidable",5,1),
+	(2,"Ecole d\'exellence",4,1),
+	(3,"Niveau professionnelle",3,2);
+
+INSERT INTO Reponse (id,contenu,id_user,id_commentaire) VALUES 
+	(1,"Merci",2,1),
+	(2,"Je vous remercie",1,1),
+	(3,"Merci !",2,2);
+
+INSERT INTO User (id,nom,prenom,username,password,grade,id_ecole) VALUES 
+	(1,"Yacine","Brahimi","admin","admin","admin",NULL),
+	(2,"Cristiano","Ronaldo","employe1","employe1","employe",1),
+	(3,"Lionnel","Messi","employe2","employe2","employe",2),
+	(4,"Tom","Hanks","employe3","employe3","employe",3),
+	(5,"AbdelAziz","Bouteflika","membre","membre","membre",NULL);
