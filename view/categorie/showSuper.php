@@ -239,6 +239,11 @@
                                                             echo '</div>';
                                                         echo '</div>';
                                                     echo '</div>';
+                                                    echo '<br>';
+                                                    echo '<a class="btn btn-primary" href="http://localhost/PrivateSchool/index.php?nom='.$ecole->nom.'" role="button">';
+                                                        echo '<i class="fas fa-tools"></i>';
+                                                        echo '<span>Gérer</span>';
+                                                    echo '</a>';  
 
                                                 echo '</td>';
                                             echo '</tr>';

@@ -142,10 +142,6 @@
         initMap();
 
     </script>
-    
-    
-
-        
     <footer class="footer">
 
     </footer>

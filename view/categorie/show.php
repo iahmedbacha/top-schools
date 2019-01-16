@@ -39,6 +39,13 @@
                                                         echo '<i data-feather="message-square"></i>';
                                                         echo '<span>Commenter</span>';
                                                     echo '</a>';
+                                                    if (isset($user)&&$user->grade=='employe'&&$user->id_ecole==$ecole->id) {
+                                                        echo '<br>';
+                                                        echo '<a class="btn btn-primary" href="http://localhost/PrivateSchool/index.php?nom='.$ecole->nom.'" role="button">';
+                                                            echo '<i class="fas fa-tools"></i>';
+                                                            echo '<span>Gérer</span>';
+                                                        echo '</a>';  
+                                                    }
                                                 echo '</td>';
                                             echo '</tr>';
                                         }
