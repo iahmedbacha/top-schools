@@ -160,5 +160,17 @@ body {
 }
 
 /*=======================================
-3. SCHOOL PAGE
+3. COMPARE PAGE
 =======================================*/
+.header-compare {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.header-compare > div {
+    text-align:center;
+    flex: 1 1 auto;
+    margin: 0 10px;
+}

@@ -4,6 +4,7 @@ class Controller {
     public $params;
     public $layout;
     public $session;
+    public $user;
 
     function __construct ($request) {
         $this->request = $request;

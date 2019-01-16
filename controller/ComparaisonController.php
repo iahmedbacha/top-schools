@@ -1,20 +1,13 @@
 <?php
-class IndexController extends Controller {
-    function index () {
-        $this->loadModel('Ecole');
-        $ecole1 = $this->CategorieEcole->get(array(
-                'conditions' => array(
-                    'id' => $params
-            ));
+class ComparaisonController extends Controller {
+    function index ($params = null) {
+        $this->loadModel('CategorieEcole');
+        $categorieEcole = $this->CategorieEcole->get();
         $this->set(array(
-            'ecole1' => $ecole1,
-            'ecole2' => $ecole2
+            'categorieEcole' => $categorieEcole
         ));
+        $this->setLayout('simple');
         $this->render('index');
-    }
-
-    function apropos () {
-        $this->render('apropos');
     }
 }
 ?>

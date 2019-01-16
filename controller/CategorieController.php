@@ -8,20 +8,40 @@ class CategorieController extends Controller {
     function show ($params) {
         $this->loadModel('CategorieEcole');
         $categorieEcole = $this->CategorieEcole->get();
-        $this->loadModel('Ecole');
-        $ecoles = $this->Ecole->get(array(
-                'conditions' => array(
-                    'id_categorie' => $params
+        $categorie = $this->CategorieEcole->getFirst(array(
+            'conditions' => array(
+                'id' => $params
             )
         ));
-
+        $this->loadModel('Ecole');
+        if (isset($_SESSION['user'])&&($_SESSION['user']->grade=='admin')) {
+            $ecoles = $this->Ecole->get(array(
+                'conditions' => array(
+                    'id_categorie' => $params
+                )
+            ));
+        }
+        else {
+            $ecoles = $this->Ecole->get(array(
+                'conditions' => array(
+                    'id_categorie' => $params,
+                    'enligne' => 1
+                )
+            ));
+        }
+        
         $this->set(array(
             'categorieEcole' => $categorieEcole,
+            'categorie' => $categorie,
             'id_categorie' => $params,
             'ecoles' => $ecoles
         ));
-
-        $this->render('show');
+        if (isset($_SESSION['user'])&&($_SESSION['user']->grade=='admin')) {
+            $this->render('showSuper');
+        }
+        else {
+            $this->render('show');
+        }
     }
 }
 ?>

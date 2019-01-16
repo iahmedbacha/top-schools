@@ -1,6 +1,6 @@
                 <div class="col-xs-12 col-md-10">
                     <div class="main-content">
-                        <h2>Formation Professionnelle</h2>
+                        <h2>Formation <?php echo $categorie->designation ?></h2>
                         <input class="form-control search-input" id="search-input" type="text" placeholder="Filtrer...">
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover" id="table">
@@ -9,13 +9,13 @@
                                         <th scope="col">Nom</th>
                                         <?php 
                                             if ($ecoles[0]->domaine!=null) {
-                                                echo "<th scope=\"col\">Domaine</th>";
+                                                echo '<th scope="col">Domaine</th>';
                                             }
                                         ?>
                                         <th scope="col">Wilaya</th>
                                         <th scope="col">Commune</th>
                                         <th scope="col">Adresse</th>
-                                        <th scope="col">Téléphones</th>
+                                        <th scope="col">Téléphone</th>
                                         <th scope="col">Fax</th>
                                         <th scope="col">Actions</th>
                                     </tr>
@@ -28,18 +28,18 @@
                                                 if ($ecole->domaine!=null) {
                                                     echo "<td>".$ecole->domaine."</td>";
                                                 } 
-                                                echo "<td>".$ecole->wilaya."</td>";
-                                                echo "<td>".$ecole->commune."</td>";
-                                                echo "<td>".$ecole->adresse."</td>";
-                                                echo "<td>".$ecole->telephone."</td>";
-                                                echo "<td>".$ecole->fax."</td>";
-                                                echo "<td>";
-                                                    echo "<a class=\"btn btn-primary\" href="."\"".BASE_URL."/commentaire/index/".$ecole->id."\""."\" role=\"button\">";
-                                                        echo "<i data-feather=\"message-square\"></i>";
-                                                        echo "<span>Commenter</span>";
-                                                    echo "</a>";
-                                                echo "</td>";
-                                            echo "</tr>";
+                                                echo '<td>'.$ecole->wilaya.'</td>';
+                                                echo '<td>'.$ecole->commune.'</td>';
+                                                echo '<td>'.$ecole->adresse.'</td>';
+                                                echo '<td>'.$ecole->telephone.'</td>';
+                                                echo '<td>'.$ecole->fax.'</td>';
+                                                echo '<td>';
+                                                    echo '<a class="btn btn-primary" href="'.BASE_URL.'/commentaire/index/'.$ecole->id.'" role="button">';
+                                                        echo '<i data-feather="message-square"></i>';
+                                                        echo '<span>Commenter</span>';
+                                                    echo '</a>';
+                                                echo '</td>';
+                                            echo '</tr>';
                                         }
                                     ?>
                                 </tbody>

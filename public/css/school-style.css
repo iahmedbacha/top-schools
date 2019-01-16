@@ -105,7 +105,7 @@ nav {
 }
 
 /* Add comment */
-.add-comment button.btn {
+.add-comment a.btn {
     display: flex;
     align-items: flex;
     justify-content: center;
@@ -232,3 +232,8 @@ nav {
 .add-comment-container .form-control {
     min-height: 100px;
 }
+
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }

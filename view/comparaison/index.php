@@ -103,3 +103,110 @@
                         </ul>
                     </nav>
                 </div>
+                <div class="col-xs-12 col-md-10">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 header-compare">
+                                <div class="btn-group school-one">
+                                    <select name="ecoles1" id="ecoles1">
+                                        <option value="">Select categorie first</option>
+                                    </select>
+                                </div>
+                                <div class="btn-group compare-school">
+                                    <select name="categorie" id="categorie">
+                                        <?php
+                                            foreach ($categorieEcole as $categorie) {
+                                                echo '<option value="'.$categorie->id.'">'.$categorie->designation.'</option>';
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="btn-group school-two">
+                                    <select name="ecoles2" id="ecoles2">
+                                        <option value="">Select categorie first</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <table class="table table-bordered table-hover" id="formation1">
+                                    
+                                </table>
+                                <ul class="list-group list-group-flush" id="commentaire1">
+
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <table class="table table-bordered table-hover" id="formation2">
+                                    
+                                </table>
+                                <ul class="list-group list-group-flush" id="commentaire2">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </main>
+    <footer class="footer">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <?php 
+                    if (!isset($accueil)) {
+                        echo "<a class=\"nav-link\" href="."\"".BASE_URL."/"."\"".">Accueil</a>";
+                    }
+                    else {
+                        echo "<a class=\"nav-link active\" href="."\"".BASE_URL."/"."\"".">Accueil</a>";
+                    }
+                ?>
+            </li>
+            <?php 
+                foreach ($categorieEcole as $categorie) {
+                    echo "<li class=\"nav-item\">";
+                        if (isset($id_categorie)&&($id_categorie==$categorie->id)) {
+                            echo "<a class=\"nav-link active\" href=\"".BASE_URL."/categorie/show/".$categorie->id."\">".$categorie->designation."</a>";
+                        }
+                        else {
+                            echo "<a class=\"nav-link\" href=\"".BASE_URL."/categorie/show/".$categorie->id."\">".$categorie->designation."</a>";
+                        }
+                        
+                    echo "</li>";
+                }
+            ?>
+            <li class="nav-item">
+                <?php
+                    if (isset($user)&&$user->grade=='admin') {
+                        if (!isset($users)) {
+                            echo "<a class=\"nav-link\" href="."\"".BASE_URL."/user"."\"".">Gestion des membres</a>";
+                        }
+                        else {
+                            echo "<a class=\"nav-link active\" href="."\"".BASE_URL."/user"."\"".">Gestion des membres</a>";
+                        }
+                    }
+                ?>
+            </li>
+            <li class="nav-item">
+                <?php
+                    if (isset($accueil)||isset($id_categorie)||isset($users)) {
+                        echo "<a class=\"nav-link\" href="."\"".BASE_URL."/apropos"."\"".">A propos</a>";
+                    }
+                    else {
+                        echo "<a class=\"nav-link active\" href="."\"".BASE_URL."/apropos"."\"".">A propos</a>";
+                    }
+                ?>
+           </li>
+        </ul>
+    </footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script src="http://demos.codexworld.com/includes/js/bootstrap.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" src=<?php echo "\"".BASE_URL."/public/js/popper.min.js"."\""; ?>></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="text/javascript" src=<?php echo "\"".BASE_URL."/public/js/script.js"."\""; ?>></script>
+</body>
+</html>

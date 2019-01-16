@@ -7,6 +7,7 @@ CREATE TABLE Ecole (
     adresse varchar(255) NOT NULL,
     telephone varchar(255) NOT NULL,
     fax varchar(255) NOT NULL,
+    enligne tinyint(1) default 1,
     id_categorie int NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT FOREIGN KEY (id_categorie) REFERENCES CategorieEcole(id) ON DELETE CASCADE
@@ -64,6 +65,7 @@ CREATE TABLE User (
     username varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     grade varchar(255) NOT NULL,
+    permission tinyint(1) default 1,
     id_ecole int,
     PRIMARY KEY (id),
     CONSTRAINT FOREIGN KEY (id_ecole) REFERENCES Ecole(id) ON DELETE CASCADE

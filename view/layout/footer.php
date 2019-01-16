@@ -28,8 +28,20 @@
                 }
             ?>
             <li class="nav-item">
-                <?php 
-                    if (isset($accueil)||isset($id_categorie)) {
+                <?php
+                    if (isset($user)&&$user->grade=='admin') {
+                        if (!isset($users)) {
+                            echo "<a class=\"nav-link\" href="."\"".BASE_URL."/user"."\"".">Gestion des membres</a>";
+                        }
+                        else {
+                            echo "<a class=\"nav-link active\" href="."\"".BASE_URL."/user"."\"".">Gestion des membres</a>";
+                        }
+                    }
+                ?>
+            </li>
+            <li class="nav-item">
+                <?php
+                    if (isset($accueil)||isset($id_categorie)||isset($users)) {
                         echo "<a class=\"nav-link\" href="."\"".BASE_URL."/apropos"."\"".">A propos</a>";
                     }
                     else {
@@ -41,6 +53,7 @@
     </footer>
 
     <script type="text/javascript" src=<?php echo "\"".BASE_URL."/public/js/jquery-3.3.1.js"."\""; ?>></script>
+    <script type="text/javascript" src=<?php echo "\"".BASE_URL."/public/js/popper.min.js"."\""; ?>></script>
     <script type="text/javascript" src=<?php echo "\"".BASE_URL."/public/js/bootstrap.min.js"."\""; ?>></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>

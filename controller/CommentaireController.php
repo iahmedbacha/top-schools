@@ -33,6 +33,24 @@ class CommentaireController extends Controller {
         $this->render('index');
     }
 
+    function show1 ($params) {
+        $this->loadModel('User');
+        $commentaires = $this->User->getLeftJoin(array(
+            'table' => 'Commentaire',
+            'onConditions' => array(
+                'Commentaire.id_user' => 'User.id'
+            ),
+            'conditions' => array(
+                'Commentaire.id_ecole' => $params
+            )
+        ));
+        $this->set(array(
+            'commentaires' => $commentaires
+        ));
+        $this->setLayout('simple');
+        $this->render('show1');
+    }
+
     function create ($params = null) {
         $this->loadModel('Commentaire');
         $this->Commentaire->insert(array(

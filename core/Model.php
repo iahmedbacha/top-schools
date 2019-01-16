@@ -25,7 +25,7 @@ class Model {
     }
 
     public function get ($req = null) {
-        $sql='select * from '.$this->table;
+        $sql = 'select * from '.$this->table;
         if (isset($req['conditions'])) {
             $sql .= ' where ';
             foreach ($req['conditions'] as $key => $value) {
@@ -38,12 +38,12 @@ class Model {
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function getFirst ($req) {
+    public function getFirst ($req = null) {
         return current($this->get($req));
     }
 
     public function insert ($req) {
-        $sql='insert into '.$this->table;
+        $sql = 'insert into '.$this->table;
         $sql .= ' ( ';
         foreach ($req['values'] as $key => $value) {
             $keys[] = "$key";
@@ -55,19 +55,19 @@ class Model {
         }
         $sql .= implode(' , ', $values);
         $sql .= ' )';
-        print_r('sql = '.$sql);
+        print_r($sql);
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function update ($req) {
-        $sql='update '.$this->table;
+        $sql = 'update '.$this->table;
         $sql .= ' set ';
         foreach ($req['values'] as $key => $value) {
             $values[] = "$key = $value";
         }
-        $sql .= implode(' , ', $keys);
+        $sql .= implode(' , ', $values);
         $sql .= ' where ';
         foreach ($req['conditions'] as $key => $value) {
             $cond[] = "$key = $value";
@@ -79,7 +79,7 @@ class Model {
     }
 
     public function delete ($req) {
-        $sql='delete from '.$this->table;
+        $sql = 'delete from '.$this->table;
         if (isset($req['conditions'])) {
             $sql .= ' where ';
             foreach ($req['conditions'] as $key => $value) {
@@ -93,7 +93,7 @@ class Model {
     }
 
     public function getLeftJoin ($req) {
-        $sql='select * from '.$this->table.' left join '.$req['table'];
+        $sql = 'select * from '.$this->table.' left join '.$req['table'];
         $sql .= ' on ';
         foreach ($req['onConditions'] as $key => $value) {
             $onCond[] = "$key = $value";
