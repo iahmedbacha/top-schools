@@ -104,7 +104,7 @@
                                     <?php 
                                         foreach ($ecoles as $ecole) {
                                             echo "<tr>";
-                                                echo "<th scope=\"row\">".$ecole->nom."</th>";
+                                                echo '<th scope="row"><a href="'.BASE_URL.'/ecole/show/'.$ecole->id.'">'.$ecole->nom.'</a></th>';
                                                 if ($ecole->domaine!=null) {
                                                     echo "<td>".$ecole->domaine."</td>";
                                                 } 
