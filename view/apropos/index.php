@@ -1,1 +1,1 @@
-<?php echo "A propos !!" ?>
+<?php echo "<p>Nous sommes une entreprise spécialisée dans le domaine de l'éducation. Notre vision est de permettre à chacun d'accéder à la meilleure formation possible en fonction de ses préférences.</p>" ?>

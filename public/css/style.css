@@ -1,15 +1,8 @@
-/*=======================================
-1. GENERAL
-=======================================*/
 body {
     border: 1px solid rgba(0,0,0,.125);
     margin: 5%; 
 }
 
-/*=======================================
-2. HOME
-=======================================*/
-/* Logo */
 .logo-area {
     position: relative;
     width: 90%;
@@ -26,7 +19,6 @@ body {
     width: 100%;
 }
 
-/*Slideshow*/
 .slideshow {
     position: relative;
     width: 90%;
@@ -64,7 +56,6 @@ body {
     100% { opacity: 1;}
 }
 
-/* Login */
 .login-area {
     margin-top: 10px;
 }
@@ -73,7 +64,6 @@ body {
     width: 100%;
 }
 
-/* User infos */
 .user-infos-area {
     text-align: center;
     margin-top: 10px;
@@ -99,7 +89,6 @@ body {
     font-weight: 600;
 }
 
-/* Menu */
 .menu {
     margin-top: 30px;
 }
@@ -115,13 +104,11 @@ body {
     color: #007bff;
 }
 
-/* Cards */
 .col-xs-12, .col-md-6, .col-lg-4 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-/* Footer */
 .footer {
     background-color: #f5f5f5;
     min-height: 100px;
@@ -129,9 +116,6 @@ body {
     margin-top: 20px;
 }
 
-/*=======================================
-3. GATEGORY PAGE
-=======================================*/
 .search-input {
     margin-top: 20px;
 }
@@ -159,9 +143,6 @@ body {
     font-weight: 700;
 }
 
-/*=======================================
-3. COMPARE PAGE
-=======================================*/
 .header-compare {
     display: flex;
     align-items: center;

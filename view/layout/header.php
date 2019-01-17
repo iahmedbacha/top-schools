@@ -90,9 +90,19 @@
                                     }                                    
                                 ?>
                            </li>
+                           <li class="nav-item">
+                                <?php 
+                                    if (!isset($comparaison)) {
+                                        echo "<a class=\"nav-link\" href="."\"".BASE_URL."/comparaison"."\"".">Comparaison</a>";
+                                    }
+                                    else {
+                                        echo "<a class=\"nav-link active\" href="."\"".BASE_URL."/comparaison"."\"".">Comparaison</a>";
+                                    }
+                                ?>
+                           </li>
                             <li class="nav-item">
                                 <?php 
-                                    if (isset($accueil)||isset($id_categorie)||isset($users)) {
+                                    if (isset($accueil)||isset($id_categorie)||isset($users)||isset($comparaison)) {
                                         echo "<a class=\"nav-link\" href="."\"".BASE_URL."/apropos"."\"".">A propos</a>";
                                     }
                                     else {

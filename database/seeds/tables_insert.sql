@@ -41,39 +41,40 @@ INSERT INTO Ecole (id,nom,domaine,wilaya,commune,adresse,telephone,fax,id_catego
 	
 
 INSERT INTO TypeFormation (id,designation,id_ecole) VALUES 
-	(1,"Mathematiques",1),
-	(2,"Business",1),
-	(3,"Electricité",2),
+	(1,"Sciences appliquées",1),
+	(2,"Commerce",1),
+	(3,"Electronique",2),
 	(4,"Bureautiques",3),
-	(5,"Génie logiciel",3);
+	(5,"Développement logiciel",3);
 
 INSERT INTO Formation (id,designation,vol_hor,prix_ht,taxe,id_type) VALUES 
-	(1,"Statistiques",10,1500,17,1),
-	(2,"Probabilités",10,1500,17,1),
-	(3,"Marketing",10,1500,17,1),
-	(4,"Communications",10,1500,17,1),
-	(5,"Equipements",10,1500,17,3),
-	(6,"Energies renouvlables",10,1500,17,3),
-	(7,"Microsoft office",10,1500,17,4),
-	(8,"Adobe illustrator",10,1500,17,4),
-	(9,"Adobe photoshop",10,1500,17,4),
-	(10,"Méthodes agiles",10,1500,17,5),
-	(11,"Outils",10,1500,17,5),
-	(12,"Qualité logiciel",10,1500,17,5);
+	(1,"Probabilités",10,2000,19,1),
+	(2,"Mathématiques",10,2000,19,1),
+	(3,"Marketing digitale",10,2000,19,1),
+	(4,"Public speaking",10,2000,19,1),
+	(5,"Outils",10,2000,19,3),
+	(6,"Nature",10,2000,19,3),
+	(7,"Microsoft azzure",10,2000,19,4),
+	(8,"Adobe XD",10,2000,19,4),
+	(9,"Adobe Illustrator",10,2000,19,4),
+	(10,"Scrum",10,2000,19,5),
+	(11,"Jenkins",10,2000,19,5),
+	(12,"Architecture logiciel",10,2000,19,5);
 
 INSERT INTO Commentaire (id,contenu,id_user,id_ecole) VALUES 
-	(1,"Ecole formidable",5,1),
-	(2,"Ecole d\'exellence",4,1),
-	(3,"Niveau professionnelle",3,2);
+	(1,"Je recommande vivement cette école",5,1),
+	(2,"J'ai adoré cette école à cause de son très bon niveau.",4,1),
+	(3,"C'est une école d'excellence",3,2);
 
 INSERT INTO Reponse (id,contenu,id_user,id_commentaire) VALUES 
-	(1,"Merci",2,1),
-	(2,"Je vous remercie",1,1),
-	(3,"Merci !",2,2);
+	(1,"Je vous en pris!",2,1),
+	(2,"Merci beaucoup.",1,1),
+	(3,"C'est gentil. Merci.",2,2);
 
 INSERT INTO User (id,nom,prenom,username,password,grade,id_ecole) VALUES 
-	(1,"Yacine","Brahimi","admin","admin","admin",NULL),
-	(2,"Cristiano","Ronaldo","employe1","employe1","employe",1),
-	(3,"Lionnel","Messi","employe2","employe2","employe",2),
-	(4,"Tom","Hanks","employe3","employe3","employe",3),
-	(5,"AbdelAziz","Bouteflika","membre","membre","membre",NULL);
+	(1,"AHMED BACHA","Ibrahim","admin","admin","admin",NULL),
+	(2,"KHODJA","Mehdi Nassim","emp1","emp1","employe",1),
+	(3,"SI-MOHAMMED","Samir M'hamed","emp2","emp2","employe",2),
+	(4,"BORSALI","Fayçal","emp3","emp3","employe",3),
+	(5,"BOUMADANE","Abdelmoumene","emp4","emp4","employe",3),
+	(6,"DELLYS","Hachemi","membre","membre","membre",NULL);
