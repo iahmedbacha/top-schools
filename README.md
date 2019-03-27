@@ -1,2 +1,2 @@
-# EcoleComparateur
-Site web agrégateur et comparateur d'écoles de formations
+# Top Schools
+Aggregation website and comparator of training schools
